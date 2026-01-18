@@ -45,6 +45,7 @@ All Skills in this library MUST comply with the [Hackathon III Constitution](../
 |-------|---------|--------|
 | `_skill-template` | Template for new skills | Template |
 | `kafka-k8s-setup` | Deploy Apache Kafka on Kubernetes using Strimzi | Ready |
+| `postgresql-k8s-setup` | Deploy PostgreSQL database on Kubernetes | Ready |
 
 ## Token Efficiency Rules
 
