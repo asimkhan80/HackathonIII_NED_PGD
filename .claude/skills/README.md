@@ -44,6 +44,7 @@ All Skills in this library MUST comply with the [Hackathon III Constitution](../
 | Skill | Purpose | Status |
 |-------|---------|--------|
 | `_skill-template` | Template for new skills | Template |
+| `kafka-k8s-setup` | Deploy Apache Kafka on Kubernetes using Strimzi | Ready |
 
 ## Token Efficiency Rules
 
