@@ -47,6 +47,7 @@ All Skills in this library MUST comply with the [Hackathon III Constitution](../
 | `kafka-k8s-setup` | Deploy Apache Kafka on Kubernetes using Strimzi | Ready |
 | `postgresql-k8s-setup` | Deploy PostgreSQL database on Kubernetes | Ready |
 | `dapr-k8s-setup` | Install Dapr runtime with Kafka pub/sub and PostgreSQL state store | Ready |
+| `fastapi-service` | Generate Dapr-enabled FastAPI backend service | Ready |
 
 ## Token Efficiency Rules
 
