@@ -1,0 +1,65 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: learnflow-backend
+  labels:
+    app: learnflow-backend
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: learnflow-backend
+  template:
+    metadata:
+      labels:
+        app: learnflow-backend
+      annotations:
+        dapr.io/enabled: "true"
+        dapr.io/app-id: "learnflow-backend"
+        dapr.io/app-port: "8080"
+        dapr.io/enable-api-logging: "true"
+    spec:
+      containers:
+        - name: learnflow-backend
+          image: learnflow-backend:latest
+          imagePullPolicy: IfNotPresent
+          ports:
+            - containerPort: 8080
+          env:
+            - name: APP_PORT
+              value: "8080"
+            - name: PUBSUB_NAME
+              value: "kafka-pubsub"
+            - name: STATESTORE_NAME
+              value: "statestore"
+          livenessProbe:
+            httpGet:
+              path: /health
+              port: 8080
+            initialDelaySeconds: 10
+            periodSeconds: 10
+          readinessProbe:
+            httpGet:
+              path: /ready
+              port: 8080
+            initialDelaySeconds: 5
+            periodSeconds: 5
+          resources:
+            requests:
+              memory: 128Mi
+              cpu: 100m
+            limits:
+              memory: 256Mi
+              cpu: 500m
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: learnflow-backend
+spec:
+  type: ClusterIP
+  ports:
+    - port: 80
+      targetPort: 8080
+  selector:
+    app: learnflow-backend
