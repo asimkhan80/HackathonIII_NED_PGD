@@ -48,6 +48,7 @@ All Skills in this library MUST comply with the [Hackathon III Constitution](../
 | `postgresql-k8s-setup` | Deploy PostgreSQL database on Kubernetes | Ready |
 | `dapr-k8s-setup` | Install Dapr runtime with Kafka pub/sub and PostgreSQL state store | Ready |
 | `fastapi-service` | Generate Dapr-enabled FastAPI backend service | Ready |
+| `nextjs-frontend` | Generate Next.js frontend application | Ready |
 
 ## Token Efficiency Rules
 
